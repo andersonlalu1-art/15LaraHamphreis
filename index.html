@@ -10,7 +10,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f5f5;
-  color: #333;
 }
 
 header {
@@ -20,29 +19,10 @@ header {
   padding: 40px 20px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-header p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
 section {
-  padding: 20px;
   max-width: 1100px;
   margin: auto;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.intro h2 {
-  color: #4aa3a1;
+  padding: 20px;
 }
 
 .gifts {
@@ -56,8 +36,6 @@ section {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
 .card img {
@@ -67,30 +45,17 @@ section {
 }
 
 .card h3 {
-  font-size: 16px;
-  margin: 15px;
+  padding: 10px;
+  font-size: 15px;
 }
 
 .card button {
-  margin: 0 15px 15px;
+  margin: 10px;
   padding: 10px;
   background: #4aa3a1;
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background: #3b8f8c;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #777;
 }
 </style>
 </head>
@@ -99,84 +64,56 @@ footer {
 
 <header>
   <h1>15 Anos da Lara Hamphreis</h1>
-  <p>Um momento especial para ser celebrado com amor 💖</p>
+  <p>Escolha um presente com carinho 💖</p>
 </header>
 
-<section class="intro">
-  <h2>Lista de Presentes</h2>
-  <p>
-    Escolha um presente abaixo 💝<br>
-    Ao clicar, uma mensagem automática será enviada pelo WhatsApp.
-  </p>
-</section>
-
 <section class="gifts" id="giftList"></section>
-
-<footer>
-  <p>Obrigada por fazer parte desse momento tão especial ✨</p>
-</footer>
 
 <script>
 const whatsapp = "5521980683275";
 
 const gifts = [
-  { name: "Calça Jeans Pantalona", image: "IMG-20260201-WA0003.jpg" },
-  { name: "Wide Leg Cargo", image: "IMG-20260201-WA0001.jpg" },
-  { name: "Pijama Listrado", image: "IMG-20260201-WA0017.jpg" },
-  { name: "Jaqueta Puffer Preta", image: "IMG-20260201-WA0027.jpg" },
-  { name: "Casaco Esportivo Off-White", image: "IMG-20260201-WA0016.jpg" },
-  { name: "Moletom Bege Flor Azul", image: "IMG-20260201-WA0007.jpg" },
-
-  { name: "Chinelo Farm Tucano", image: "IMG-20260201-WA0018.jpg" },
-  { name: "Adidas Campus Cinza", image: "IMG-20260201-WA0010.jpg" },
-  { name: "Adidas Campus Preto", image: "IMG-20260201-WA0013.jpg" },
-  { name: "Nike Dunk Low Twist", image: "IMG-20260201-WA0022.jpg" },
-  { name: "Slide Fila Drifter", image: "IMG-20260201-WA0002.jpg" },
-
-  { name: "Copo Stanley", image: "IMG-20260201-WA0019.jpg" },
-  { name: "Garrafa Farm", image: "IMG-20260201-WA0008.jpg" },
-  { name: "Relógio Casio", image: "IMG-20260201-WA0020.jpg" },
-
-  { name: "Pulseira Vivara Life", image: "IMG-20260201-WA0023.jpg" },
-  { name: "Kit de Joias Prata 925", image: "IMG-20260201-WA0006.jpg" },
-
-  { name: "Escova Secadora", image: "IMG-20260201-WA0024.jpg" },
-  { name: "Baby Liss Taiff", image: "IMG-20260201-WA0011.jpg" },
-  { name: "Kit de Maquiagem", image: "IMG-20260201-WA0009.jpg" },
-  { name: "Kit de Pincéis", image: "IMG-20260201-WA0026.jpg" },
-
-  { name: "Kit Lily", image: "IMG-20260201-WA0015.jpg" },
-  { name: "Kit Glosslicious", image: "IMG-20260201-WA0004.jpg" },
-  { name: "Perfume Hello Hello", image: "IMG-20260201-WA0025.jpg" },
-  { name: "Perfume Egeo Choc", image: "IMG-20260201-WA0005.jpg" },
-  { name: "Kit Deleite", image: "IMG-20260201-WA0021.jpg" },
-
-  { name: "Smart Watch", image: "IMG-20260201-WA0014.jpg" },
-  { name: "Pelúcia Marie Big Feet", image: "IMG-20260201-WA0012.jpg" }
+  { name: "Tênis Adidas Campus", image: "AdidasCampus.jpg" },
+  { name: "Tênis Adidas Campus Cinza", image: "AdidasCampuscinza.jpg" },
+  { name: "Baby Liss", image: "BabyLiss.jpg" },
+  { name: "Chinelo Farm Tucano", image: "ChineloFarmTucano.jpg" },
+  { name: "Escova Secadora", image: "Escovasecadora.jpg" },
+  { name: "Garrafa Xicó Tropical", image: "GarrafaXicoTropical.jpg" },
+  { name: "Gloss da Franciny", image: "GlossdaFranciny.jpg" },
+  { name: "Jaqueta Slim Fit", image: "JaquetaSlimFit.jpg" },
+  { name: "Jaqueta Puffer", image: "Jaquetapuffer.jpg" },
+  { name: "Kit de Leite", image: "KitDeLeite.jpg" },
+  { name: "Kit de Joias Prata 925", image: "KitdeJoiasPrata925.jpg" },
+  { name: "Kit de Pincéis", image: "Kitdepinceis.jpg" },
+  { name: "Kit de Maquiagem", image: "Kitmaquiagem.jpg" },
+  { name: "Moletom", image: "Moletom.jpg" },
+  { name: "Tênis Nike Dunk Low Twist", image: "NikeDunkLowTwist.jpg" },
+  { name: "Pelúcia Marie Big Feet", image: "PeluciaMarieBigFeet.jpg" },
+  { name: "Perfume Hello Kitty", image: "PerfumeHello.jpg" },
+  { name: "Pijama Listrado", image: "Pijamalistrado.jpg" },
+  { name: "Pulseira Vivara", image: "PulseiraVivara.jpg" },
+  { name: "Slide Feminino Fila Drifter", image: "SlideFemininoFilaDrifterBasic.jpg" },
+  { name: "Wide Leg Cargo", image: "WideLegCargo.jpg" }
 ];
 
 const list = document.getElementById("giftList");
 
 gifts.forEach(gift => {
-  const card = document.createElement("div");
-  card.className = "card";
-
-  card.innerHTML = `
-    <img src="${gift.image}" alt="${gift.name}">
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `
+    <img src="${gift.image}">
     <h3>${gift.name}</h3>
-    <button onclick="sendMessage('${gift.name}')">
-      Escolher este presente
-    </button>
+    <button onclick="send('${gift.name}')">Escolher</button>
   `;
-
-  list.appendChild(card);
+  list.appendChild(div);
 });
 
-function sendMessage(presente) {
-  const text = encodeURIComponent(
-    `Olá! 😊 Escolhi o presente "${presente}" para os 15 anos da Lara 💖`
+function send(p) {
+  const t = encodeURIComponent(
+    `Olá! Escolhi o presente "${p}" para os 15 anos da Lara 💖`
   );
-  window.open(`https://wa.me/${whatsapp}?text=${text}`, "_blank");
+  window.open(`https://wa.me/${whatsapp}?text=${t}`, "_blank");
 }
 </script>
 
