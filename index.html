@@ -120,17 +120,57 @@ footer {
 const whatsapp = "5521980683275";
 
 const gifts = [
+];<script>
+const whatsapp = "5521980683275";
+
+const gifts = [
   { name: "Tênis Adidas Campus", image: "AdidasCampus.jpg" },
+  { name: "Tênis Adidas Campus Cinza", image: "AdidasCampuscinza.jpg" },
   { name: "Baby Liss", image: "BabyLiss.jpg" },
   { name: "Chinelo Farm Tucano", image: "ChineloFarmTucano.jpg" },
   { name: "Escova Secadora", image: "Escovasecadora.jpg" },
-  { name: "Perfume Hello Kitty", image: "PerfumeHello.jpg" },
+  { name: "Garrafa Xicó Tropical", image: "GarrafaXicoTropical.jpg" },
+  { name: "Gloss da Franciny", image: "GlossdaFranciny.jpg" },
+  { name: "Jaqueta Slim Fit", image: "JaquetaSlimFit.jpg" },
   { name: "Jaqueta Puffer", image: "Jaquetapuffer.jpg" },
+  { name: "Kit de Leite", image: "KitDeLeite.jpg" },
+  { name: "Kit de Joias Prata 925", image: "KitdeJoiasPrata925.jpg" },
+  { name: "Kit de Pincéis", image: "Kitdepinceis.jpg" },
   { name: "Kit de Maquiagem", image: "Kitmaquiagem.jpg" },
+  { name: "Moletom", image: "Moletom.jpg" },
+  { name: "Tênis Nike Dunk Low Twist", image: "NikeDunkLowTwist.jpg" },
+  { name: "Pelúcia Marie Big Feet", image: "PeluciaMarieBigFeet.jpg" },
+  { name: "Perfume Hello Kitty", image: "PerfumeHello.jpg" },
   { name: "Pijama Listrado", image: "Pijamalistrado.jpg" },
-  { name: "Pelúcia Marie", image: "PeluciaMarieBigFeet.jpg" },
-  { name: "Pulseira Vivara", image: "PulseiraVivara.jpg" }
+  { name: "Pulseira Vivara", image: "PulseiraVivara.jpg" },
+  { name: "Slide Feminino Fila Drifter", image: "SlideFemininoFilaDrifterBasic.jpg" },
+  { name: "Wide Leg Cargo", image: "WideLegCargo.jpg" }
 ];
+
+const list = document.getElementById("giftList");
+
+gifts.forEach(gift => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${gift.image}" alt="${gift.name}">
+    <h3>${gift.name}</h3>
+    <button onclick="sendMessage('${gift.name}')">
+      Escolher este presente
+    </button>
+  `;
+
+  list.appendChild(card);
+});
+
+function sendMessage(presente) {
+  const text = encodeURIComponent(
+    `Olá! 😊 Escolhi o presente "${presente}" para os 15 anos da Lara 💖`
+  );
+  window.open(`https://wa.me/${whatsapp}?text=${text}`, "_blank");
+}
+</script>
 
 const list = document.getElementById("giftList");
 
