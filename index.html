@@ -119,60 +119,40 @@ footer {
 <script>
 const whatsapp = "5521980683275";
 
-const gifts = [
-];<script>
-const whatsapp = "5521980683275";
+const gifts = [{ name: "Calça Jeans Pantalona", image: "IMG-20260201-WA0003.jpg" },
+  { name: "Wide Leg Cargo", image: "IMG-20260201-WA0001.jpg" },
+  { name: "Pijama Listrado", image: "IMG-20260201-WA0017.jpg" },
+  { name: "Jaqueta Puffer Preta", image: "IMG-20260201-WA0027.jpg" },
+  { name: "Casaco Esportivo Off-White", image: "IMG-20260201-WA0016.jpg" },
+  { name: "Moletom Bege Flor Azul", image: "IMG-20260201-WA0007.jpg" },
 
-const gifts = [
+  { name: "Chinelo Farm Tucano", image: "IMG-20260201-WA0018.jpg" },
+  { name: "Adidas Campus Cinza", image: "IMG-20260201-WA0010.jpg" },
+  { name: "Adidas Campus Preto", image: "IMG-20260201-WA0013.jpg" },
+  { name: "Nike Dunk Low Twist", image: "IMG-20260201-WA0022.jpg" },
+  { name: "Slide Fila Drifter", image: "IMG-20260201-WA0002.jpg" },
 
+  { name: "Copo Stanley", image: "IMG-20260201-WA0019.jpg" },
+  { name: "Garrafa Farm", image: "IMG-20260201-WA0008.jpg" },
+  { name: "Relógio Casio", image: "IMG-20260201-WA0020.jpg" },
 
-  { name: "Tênis Adidas Campus", image: "AdidasCampus.jpg" },
-  { name: "Tênis Adidas Campus Cinza", image: "AdidasCampuscinza.jpg" },
-  { name: "Baby Liss", image: "BabyLiss.jpg" },
-  { name: "Chinelo Farm Tucano", image: "ChineloFarmTucano.jpg" },
-  { name: "Escova Secadora", image: "Escovasecadora.jpg" },
-  { name: "Garrafa Xicó Tropical", image: "GarrafaXicoTropical.jpg" },
-  { name: "Gloss da Franciny", image: "GlossdaFranciny.jpg" },
-  { name: "Jaqueta Slim Fit", image: "JaquetaSlimFit.jpg" },
-  { name: "Jaqueta Puffer", image: "Jaquetapuffer.jpg" },
-  { name: "Kit de Leite", image: "KitDeLeite.jpg" },
-  { name: "Kit de Joias Prata 925", image: "KitdeJoiasPrata925.jpg" },
-  { name: "Kit de Pincéis", image: "Kitdepinceis.jpg" },
-  { name: "Kit de Maquiagem", image: "Kitmaquiagem.jpg" },
-  { name: "Moletom", image: "Moletom.jpg" },
-  { name: "Tênis Nike Dunk Low Twist", image: "NikeDunkLowTwist.jpg" },
-  { name: "Pelúcia Marie Big Feet", image: "PeluciaMarieBigFeet.jpg" },
-  { name: "Perfume Hello Kitty", image: "PerfumeHello.jpg" },
-  { name: "Pijama Listrado", image: "Pijamalistrado.jpg" },
-  { name: "Pulseira Vivara", image: "PulseiraVivara.jpg" },
-  { name: "Slide Feminino Fila Drifter", image: "SlideFemininoFilaDrifterBasic.jpg" },
-  { name: "Wide Leg Cargo", image: "WideLegCargo.jpg" }
-];
+  { name: "Pulseira Vivara Life", image: "IMG-20260201-WA0023.jpg" },
+  { name: "Kit de Joias Prata 925", image: "IMG-20260201-WA0006.jpg" },
 
-const list = document.getElementById("giftList");
+  { name: "Escova Secadora", image: "IMG-20260201-WA0024.jpg" },
+  { name: "Baby Liss Taiff", image: "IMG-20260201-WA0011.jpg" },
+  { name: "Kit de Maquiagem", image: "IMG-20260201-WA0009.jpg" },
+  { name: "Kit de Pincéis", image: "IMG-20260201-WA0026.jpg" },
 
-gifts.forEach(gift => {
-  const card = document.createElement("div");
-  card.className = "card";
+  { name: "Kit Lily", image: "IMG-20260201-WA0015.jpg" },
+  { name: "Kit Glosslicious", image: "IMG-20260201-WA0004.jpg" },
+  { name: "Perfume Hello Hello", image: "IMG-20260201-WA0025.jpg" },
+  { name: "Perfume Egeo Choc", image: "IMG-20260201-WA0005.jpg" },
+  { name: "Kit Deleite", image: "IMG-20260201-WA0021.jpg" },
 
-  card.innerHTML = `
-    <img src="${gift.image}" alt="${gift.name}">
-    <h3>${gift.name}</h3>
-    <button onclick="sendMessage('${gift.name}')">
-      Escolher este presente
-    </button>
-  `;
-
-  list.appendChild(card);
-});
-
-function sendMessage(presente) {
-  const text = encodeURIComponent(
-    `Olá! 😊 Escolhi o presente "${presente}" para os 15 anos da Lara 💖`
-  );
-  window.open(`https://wa.me/${whatsapp}?text=${text}`, "_blank");
-}
-</script>
+  { name: "Smart Watch", image: "IMG-20260201-WA0014.jpg" },
+  { name: "Pelúcia Marie Big Feet", image: "IMG-20260201-WA0012.jpg" }
+  ];
 
 const list = document.getElementById("giftList");
 
