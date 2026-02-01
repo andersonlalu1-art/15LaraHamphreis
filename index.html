@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Anos da Lara</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #7fcfc4, #4aa3a1);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+section {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro h2 {
+  color: #4aa3a1;
+}
+
+.gifts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 15px;
+}
+
+.card button {
+  margin: 15px;
+  padding: 10px;
+  background: #4aa3a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #3b8f8c;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>15 Anos da Lara Hamphreis</h1>
+  <p>Um momento especial para ser celebrado com amor 💖</p>
+</header>
+
+<section class="intro">
+  <h2>Lista de Presentes</h2>
+  <p>
+    Se você quiser presentear a Lara, escolha um item abaixo.<br>
+    Ao clicar, uma mensagem automática será enviada pelo WhatsApp 💌
+  </p>
+</section>
+
+<section class="gifts" id="giftList"></section>
+
+<footer>
+  <p>Obrigada por fazer parte desse momento tão especial ✨</p>
+</footer>
+
+<script>
+const whatsapp = "5521980683275";
+
+const gifts = [
+  { name: "Tênis Adidas Campus", image: "AdidasCampus.jpg" },
+  { name: "Baby Liss", image: "BabyLiss.jpg" },
+  { name: "Chinelo Farm Tucano", image: "ChineloFarmTucano.jpg" },
+  { name: "Escova Secadora", image: "Escovasecadora.jpg" },
+  { name: "Perfume Hello Kitty", image: "PerfumeHello.jpg" },
+  { name: "Jaqueta Puffer", image: "Jaquetapuffer.jpg" },
+  { name: "Kit de Maquiagem", image: "Kitmaquiagem.jpg" },
+  { name: "Pijama Listrado", image: "Pijamalistrado.jpg" },
+  { name: "Pelúcia Marie", image: "PeluciaMarieBigFeet.jpg" },
+  { name: "Pulseira Vivara", image: "PulseiraVivara.jpg" }
+];
+
+const list = document.getElementById("giftList");
+
+gifts.forEach(gift => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${gift.image}" alt="${gift.name}">
+    <h3>${gift.name}</h3>
+    <button onclick="sendMessage('${gift.name}')">
+      Escolher este presente
+    </button>
+  `;
+
+  list.appendChild(card);
+});
+
+function sendMessage(presente) {
+  const text = encodeURIComponent(
+    `Olá! 😊 Escolhi o presente "${presente}" para os 15 anos da Lara 💖`
+  );
+  window.open(`https://wa.me/${whatsapp}?text=${text}`, "_blank");
+}
+</script>
+
+</body>
+</html>
