@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Anos Lara Hamphreis | Lista de Presentes</title>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f0fdfa}
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+
+const GIFT_DATA = [
+{ id:1, name:"Wide Leg Cargo", category:"Moda", detail:"Off-White (38)", image:"WideLegCargo.jpg"},
+{ id:2, name:"Pijama Listrado", category:"Moda", detail:"Rosa", image:"Pijamalistrado.jpg"},
+{ id:3, name:"Moletom", category:"Moda", detail:"Bege", image:"Moletom.jpg"},
+{ id:4, name:"Jaqueta Slim Fit", category:"Moda", detail:"Preta", image:"JaquetaSlimFit.jpg"},
+{ id:5, name:"Jaqueta Puffer", category:"Moda", detail:"Preta", image:"Jaquetapuffer.jpg"},
+
+{ id:6, name:"Chinelo Farm Tucano", category:"Calçados", detail:"37", image:"ChineloFarmTucano.jpg"},
+{ id:7, name:"Adidas Campus", category:"Calçados", detail:"37", image:"AdidasCampus.jpg"},
+{ id:8, name:"Adidas Campus Cinza", category:"Calçados", detail:"37", image:"AdidasCampuscinca.jpg"},
+{ id:9, name:"Nike Dunk Low Twist", category:"Calçados", detail:"37", image:"NikeDunkLowTwist.jpg"},
+{ id:10, name:"Slide Fila Drifter", category:"Calçados", detail:"37", image:"SlideFemininoFilaDrifterBasic.jpg"},
+
+{ id:11, name:"Baby Liss", category:"Beleza", detail:"Taiff", image:"BabyLiss.jpg"},
+{ id:12, name:"Escova Secadora", category:"Beleza", detail:"Foxybae", image:"Escovasecadora.jpg"},
+{ id:13, name:"Kit Maquiagem", category:"Beleza", detail:"Completo", image:"Kitmaquiagem.jpg"},
+{ id:14, name:"Kit de Pincéis", category:"Beleza", detail:"Profissional", image:"Kitdepinceis.jpg"},
+
+{ id:15, name:"Perfume Hello", category:"Perfume", detail:"Nah Cardoso", image:"PerfumeHello.jpg"},
+{ id:16, name:"Gloss Franciny", category:"Maquiagem", detail:"Fran", image:"GlossdaFranciny.jpg"},
+{ id:17, name:"Kit Deleite", category:"Cosméticos", detail:"Boticário", image:"KitDeleite.jpg"},
+
+{ id:18, name:"Pulseira Vivara", category:"Joias", detail:"Prata", image:"PulseiraVivara.jpg"},
+{ id:19, name:"Kit Joias Prata 925", category:"Joias", detail:"Completo", image:"KitdeJoiasPrata925.jpg"},
+
+{ id:20, name:"Garrafa Farm", category:"Acessório", detail:"Xilo Tropical", image:"GarrafaXiloTropical.jpg"},
+{ id:21, name:"Pelúcia Marie", category:"Diversos", detail:"Disney", image:"PeluciaMarieBigFeet.jpg"}
+];
+
+function App(){
+return(
+<div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+{GIFT_DATA.map(item=>(
+<div key={item.id} className="bg-white rounded-xl shadow p-3 text-center">
+<img src={item.image} className="w-full h-48 object-contain mb-2"/>
+<h3 className="font-bold">{item.name}</h3>
+<p className="text-sm text-gray-500">{item.detail}</p>
+</div>
+))}
+</div>
+);
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
